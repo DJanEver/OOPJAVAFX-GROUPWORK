@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.digicelController.DigicelMainSelection">
+   <children>
+      <Button layoutX="28.0" layoutY="41.0" mnemonicParsing="false" onAction="#digicelMBackBtn" text="Back" />
+      <Text layoutX="158.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select and option to proceed" wrappingWidth="385.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Button layoutX="262.0" layoutY="206.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="176.0" text="Display company information" />
+      <Button layoutX="262.0" layoutY="254.0" mnemonicParsing="false" onAction="#callAddCus" prefHeight="40.0" prefWidth="176.0" text="Add customer" />
+      <Button layoutX="262.0" layoutY="306.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="176.0" text="View customer base" />
+      <Button layoutX="262.0" layoutY="410.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="176.0" text="View all phone credit" />
+      <Button layoutX="262.0" layoutY="357.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="176.0" text=" Create phone credit" />
+   </children>
+</AnchorPane>
