@@ -70,8 +70,8 @@ public class ControllerUtilities {
     public boolean isAddTfEmpty(String cusTfID, String cusLN, String cusAddress, String cusNumPrefix,
                              String cusNumBody) {
 
-        return cusTfID.equals("") || cusLN.equals("") || cusAddress.equals("") ||
-                cusNumPrefix.equals("") || cusNumBody.equals("");
+        return !cusTfID.equals("") && !cusLN.equals("") && !cusAddress.equals("") &&
+                !cusNumPrefix.equals("") && !cusNumBody.equals("");
     }
 
 }

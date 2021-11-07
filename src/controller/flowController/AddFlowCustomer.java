@@ -28,9 +28,9 @@ public class AddFlowCustomer {
     public void addFCusBtn(ActionEvent event) throws IOException{
         final String filename = " Flow_Customers.txt";
         controllerUtilities.ensureFileCreation(filename);
-        if (!controllerUtilities.isAddTfEmpty(flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText(),
+        if (controllerUtilities.isAddTfEmpty(flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText(),
                 flowCusNumPrefix.getText(), flowCusNumBody.getText())) {
-            if(flowCusTfID.getText().length() == 3) {
+            if(flowCusTfID.getText().length() > 6) {
                 if(flowCusLN.getText().length() > 3 && flowCusAddress.getText().length() > 3) {
                     if(flowCusNumBody.getText().length() == 7) {
                         if (flow.getNumPrefix().contains(flowCusNumPrefix.getText())) {
@@ -44,6 +44,7 @@ public class AddFlowCustomer {
                                 if(controllerUtilities.writeCusToFile(filename,
                                         flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText()
                                         ,flowCusNumPrefix.getText(), flowCusNumBody.getText())){
+                                    Flow.setNumberOfCustomer(Flow.getNumberOfCustomer() + 1);
                                     System.out.print("Works file in\n");
                                 }else{
                                     System.out.print("Something went wrong\n");
@@ -67,7 +68,7 @@ public class AddFlowCustomer {
                 }
             }else{
                 alert.setAlertType(Alert.AlertType.ERROR);
-                alert.setContentText("ID must have 3 characters eg: Q2E");
+                alert.setContentText("ID must have more that 6 characters");
                 alert.show();
             }
         }else{

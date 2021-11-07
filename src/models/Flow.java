@@ -11,10 +11,16 @@ public class Flow extends ServiceProvider {
         List<String> preNumList = Arrays.asList("601", "602", "603",  "604");
         this.setNumPrefix(preNumList);
         this.setPassword("TheWayIFlow2021");
+        setCompanyID(600);
+        setAddress("Flow Jamaica Headquarters, 2-6 Carlton Cres, Kingston");
+        this.parentCompanyName = "Flow Enterprise";
     }
     public Flow(String parentCompanyName){
         this.parentCompanyName = parentCompanyName;
         this.setPassword("TheWayIFlow2021");
+        setCompanyID(600);
+        setAddress("Flow Jamaica Headquarters, 2-6 Carlton Cres, Kingston");
+        this.parentCompanyName = "Flow Enterprise";
     }
 
 

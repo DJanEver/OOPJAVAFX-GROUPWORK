@@ -6,7 +6,7 @@ public abstract class ServiceProvider {
 
     private static int companyID;
     private static String address;
-    private static int numberOfCustomer;
+    private static int numberOfCustomer = 0;
     private String password;
     private List<String> numPrefix;
 
