@@ -15,4 +15,7 @@ public class DigicelMainSelection {
     public void callAddCus(ActionEvent event ) throws IOException{
         controllerUtilities.switchScene("resources/digicel/add_digi_customer.fxml", event);
     }
+    public void digiCompanyInfo(ActionEvent event) throws IOException{
+        controllerUtilities.switchScene("resources/digicel/digi_displaycompany_info.fxml", event);
+    }
 }

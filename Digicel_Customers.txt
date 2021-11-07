@@ -1,0 +1,7 @@
+CusID: 12312311
+Lastname: Watson
+Address: a928j12e
+KingSton 102
+PhoneNumber: 303-1234567
+
+

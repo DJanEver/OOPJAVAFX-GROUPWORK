@@ -9,8 +9,15 @@ import utilities.controller.ControllerUtilities;
 
 import java.io.IOException;
 
+/**
+ * Class created by hakeem watson-2000391
+ * this is the controller class for the add_digi_customer.fxml file
+ **/
 public class AddCustomerDigi {
 
+    /**
+     * variables that will get the data from the text fields.
+     **/
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();
     public TextField digiCusTfID;
     public TextField digiCusLN;
@@ -20,16 +27,37 @@ public class AddCustomerDigi {
     Alert alert = new Alert(Alert.AlertType.NONE);
     public Digicel digicel = new Digicel();
 
+    /**
+     *Method created by hakeem watson 2000391
+     * this method is used to control the back button and send the user back to the main digicel
+     * selection menu
+     */
     public void addCDBackBtn(ActionEvent event) throws IOException {
         controllerUtilities.switchScene("resources/digicel/digicel_m_selec.fxml",
                 event);
     }
+
+
+    /**
+     *Method created by hakeem watson 2000391
+     * this method is used to control the add customer button when clicked it
+     * writes the data gathered from the text fields into thr respective file.
+     */
     public void addCusBtn(ActionEvent event) throws IOException {
         final String filename = "Digicel_Customers.txt";
+
+        /**
+         *ensureFileCreation ensures the file was created.
+         */
         controllerUtilities.ensureFileCreation(filename);
-        if (!controllerUtilities.isAddTfEmpty(digiCusTfID.getText(), digiCusLN.getText(), digiCusAddress.getText(),
+
+        /**
+         *The following bellow validates the data from the text fields and calls the write to file function
+         * to pass the data
+         */
+        if (controllerUtilities.isAddTfEmpty(digiCusTfID.getText(), digiCusLN.getText(), digiCusAddress.getText(),
                 digiCusNumPrefix.getText(), digiCusNumBody.getText())) {
-            if(digiCusTfID.getText().length() == 3) {
+            if(digiCusTfID.getText().length() > 6) {
                 if(digiCusLN.getText().length() > 3 && digiCusAddress.getText().length() > 3) {
                     if(digiCusNumBody.getText().length() == 7) {
                         if (digicel.getNumPrefix().contains(digiCusNumPrefix.getText())) {
@@ -43,12 +71,17 @@ public class AddCustomerDigi {
                             if(controllerUtilities.writeCusToFile(filename,
                                     digiCusTfID.getText(), digiCusLN.getText(), digiCusAddress.getText()
                             ,digiCusNumPrefix.getText(), digiCusNumBody.getText())){
+                                Digicel.setNumberOfCustomer(Digicel.getNumberOfCustomer() + 1);
                               System.out.print("Works file in");
                             }else{
                                 System.out.print("Something went wrong");
                             }
                         }
                     }else{
+
+                            /**
+                             *alerts are displayed when the user enters invalid data.
+                             */
                             alert.setAlertType(Alert.AlertType.ERROR);
                             alert.setContentText("Prefix does not exist please use one of the following: " +
                                    "\n" + "301, 302, 303, 304");
@@ -66,7 +99,7 @@ public class AddCustomerDigi {
                 }
             }else{
                 alert.setAlertType(Alert.AlertType.ERROR);
-                alert.setContentText("ID must have 3 characters eg: Q2E");
+                alert.setContentText("ID must have more that 6 characters");
                 alert.show();
             }
         }else{

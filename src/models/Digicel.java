@@ -12,10 +12,16 @@ public class Digicel extends ServiceProvider {
         List<String> preNumList = Arrays.asList("301", "302", "303", "304");
         this.setNumPrefix(preNumList);
         this.setPassword("TheBiggerBetterNetwork2021");
+        setCompanyID(300);
+        setAddress("Shop 14 Upper Manor Park Plaza, 186 Constant Spring Rd, Kingston");
+        this.numOfBranches = 1;
     }
     public Digicel(int numOfBranches){
         this.numOfBranches = numOfBranches;
         this.setPassword("TheBiggerBetterNetwork2021");
+        setCompanyID(300);
+        setAddress("Shop 14 Upper Manor Park Plaza, 186 Constant Spring Rd, Kingston");
+        this.numOfBranches = 1;
     }
 
     public int getNumOfBranches() { return numOfBranches; }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.flowController.FlowDisplayCompnayInfo">
+   <children>
+      <ListView fx:id="companyInfoLV" layoutX="174.0" layoutY="239.0" prefHeight="352.0" prefWidth="352.0" />
+      <Button layoutX="40.0" layoutY="59.0" mnemonicParsing="false" onAction="#flowCDBackBtn" text="Back" />
+      <Text layoutX="156.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flow Company Information">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Button layoutX="268.0" layoutY="606.0" mnemonicParsing="false" onAction="#showFlowInfoBtn" prefHeight="33.0" text="Show Company Information" />
+   </children>
+</AnchorPane>

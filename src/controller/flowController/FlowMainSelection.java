@@ -16,4 +16,8 @@ public class FlowMainSelection {
         controllerUtilities.switchScene("resources/flow/add_flow_customer.fxml", event);
     }
 
+    public void flowCompanyInfo(ActionEvent event) throws IOException{
+        controllerUtilities.switchScene("resources/flow/flow_displaycompany_info.fxml", event);
+    }
+
 }

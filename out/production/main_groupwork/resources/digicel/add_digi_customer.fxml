@@ -15,7 +15,7 @@
       <Text layoutX="217.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
       <Text layoutX="223.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" />
       <Text layoutX="204.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:" />
-      <TextField fx:id="digiCusTfID" layoutX="295.0" layoutY="116.0" prefHeight="33.0" prefWidth="200.0" promptText="100" />
+      <TextField fx:id="digiCusTfID" layoutX="295.0" layoutY="116.0" prefHeight="33.0" prefWidth="200.0" promptText="100-1241-1241" />
       <TextField fx:id="digiCusLN" layoutX="295.0" layoutY="167.0" prefHeight="33.0" prefWidth="200.0" />
       <TextField fx:id="digiCusNumBody" layoutX="378.0" layoutY="463.0" prefHeight="33.0" prefWidth="157.0" promptText="7921100" />
       <TextArea fx:id="digiCusAddress" layoutX="295.0" layoutY="219.0" prefHeight="200.0" prefWidth="200.0" />
