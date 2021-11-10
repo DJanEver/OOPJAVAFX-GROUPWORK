@@ -1,0 +1,18 @@
+CusID: 100-111-111-111
+Lastname: Humnaer
+Address: 1101 Jream Shtea
+Kingston 77
+PhoneNumber: 3011234567
+Balance: 0
+
+
+
+
+CusID: 12-111-312
+Lastname: juymad
+Address: 128uuasd 
+Kingston 88
+PhoneNumber: 3021234567
+Balance: 0
+
+

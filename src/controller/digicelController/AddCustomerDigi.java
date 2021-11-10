@@ -67,14 +67,22 @@ public class AddCustomerDigi {
                             alert.setContentText("ID already exists please try again");
                             alert.show();
                         } else {
+                            if (!controllerUtilities.checkForNumber(filename, digiCusNumPrefix.getText() +
+                                    digiCusNumBody.getText())) {
+                                if (controllerUtilities.writeCusToFile(filename,
+                                        digiCusTfID.getText(), digiCusLN.getText(), digiCusAddress.getText()
+                                        , digiCusNumPrefix.getText(), digiCusNumBody.getText(), String.valueOf(digicel.getBalance()))) {
 
-                            if(controllerUtilities.writeCusToFile(filename,
-                                    digiCusTfID.getText(), digiCusLN.getText(), digiCusAddress.getText()
-                            ,digiCusNumPrefix.getText(), digiCusNumBody.getText(),String.valueOf(Digicel.getNumberOfCustomer()) )){
-                                Digicel.setNumberOfCustomer(Digicel.getNumberOfCustomer() + 1);
-                              System.out.print("Works file in");
+                                    alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                                    alert.setContentText("Customer added");
+                                    alert.show();
+                                } else {
+                                    System.out.print("Something went wrong");
+                                }
                             }else{
-                                System.out.print("Something went wrong");
+                                alert.setAlertType(Alert.AlertType.ERROR);
+                                alert.setContentText("Phone number already exits or File Empty");
+                                alert.show();
                             }
                         }
                     }else{

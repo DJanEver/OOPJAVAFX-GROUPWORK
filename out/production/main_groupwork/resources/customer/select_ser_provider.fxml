@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customerController.SelectSerProvider">
+   <children>
+      <Label layoutX="177.0" layoutY="78.0" text="Select Service Provider">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="28.0" layoutY="38.0" mnemonicParsing="false" onAction="#selectServicePBackBtn" text="Back" />
+      <Button layoutX="300.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchDigiCusMenu" prefHeight="40.0" prefWidth="100.0" text="Digicel" />
+      <Button layoutX="300.0" layoutY="265.0" mnemonicParsing="false" onAction="#switchFlowCusMenu" prefHeight="40.0" prefWidth="100.0" text="Flow" />
+   </children>
+</AnchorPane>
