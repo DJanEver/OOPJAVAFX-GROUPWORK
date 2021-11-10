@@ -70,7 +70,7 @@ public class AddCustomerDigi {
 
                             if(controllerUtilities.writeCusToFile(filename,
                                     digiCusTfID.getText(), digiCusLN.getText(), digiCusAddress.getText()
-                            ,digiCusNumPrefix.getText(), digiCusNumBody.getText())){
+                            ,digiCusNumPrefix.getText(), digiCusNumBody.getText(),String.valueOf(Digicel.getNumberOfCustomer()) )){
                                 Digicel.setNumberOfCustomer(Digicel.getNumberOfCustomer() + 1);
                               System.out.print("Works file in");
                             }else{

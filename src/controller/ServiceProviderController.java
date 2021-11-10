@@ -19,4 +19,8 @@ public class ServiceProviderController {
     public void flowLoginForm(ActionEvent event) throws IOException{
         controllerUtilities.switchScene("resources/flow/flow_login_form.fxml",event);
     }
+
+    public void switchToNumberOfCus(ActionEvent event) throws IOException{
+        controllerUtilities.switchScene("resources/display_number_ofcus.fxml", event);
+    }
 }
