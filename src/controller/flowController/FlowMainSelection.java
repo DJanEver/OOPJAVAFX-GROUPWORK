@@ -20,4 +20,8 @@ public class FlowMainSelection {
         controllerUtilities.switchScene("resources/flow/flow_displaycompany_info.fxml", event);
     }
 
+    public void flowViewCusBase(ActionEvent event) throws IOException{
+        controllerUtilities.switchScene("resources/flow/flow_view_cus.fxml", event);
+    }
+
 }
