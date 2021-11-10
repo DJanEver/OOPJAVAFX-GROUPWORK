@@ -9,7 +9,7 @@
       <ListView fx:id="flowViewCredit" layoutX="96.0" layoutY="119.0" prefHeight="372.0" prefWidth="509.0" style="-fx-background-color: white;" />
       <Button layoutX="44.0" layoutY="38.0" mnemonicParsing="false" onAction="#flowViewCreditBackBtn" style="-fx-background-color: white;" text="Back" />
       <Button layoutX="300.0" layoutY="539.0" mnemonicParsing="false" onAction="#viewFlowCreditBtn" prefHeight="40.0" prefWidth="108.0" style="-fx-background-color: white;" text="View Customers" />
-      <TextField alignment="CENTER" layoutX="195.0" layoutY="63.0" style="-fx-background-color: skyblue;" text="Digicel Credit">
+      <TextField alignment="CENTER" layoutX="195.0" layoutY="63.0" style="-fx-background-color: skyblue;" text="Flow Credit">
          <font>
             <Font size="25.0" />
          </font>

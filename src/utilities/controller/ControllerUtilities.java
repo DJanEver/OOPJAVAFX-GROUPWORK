@@ -38,7 +38,7 @@ public class ControllerUtilities {
     }
 
     public boolean writeCusToFile(String fileName, String digiCusTfID, String digiCusLN,String digiCusAddress,
-                                  String digiCusNumPrefix, String digiCusNumBody, String numberCus){
+                                  String digiCusNumPrefix, String digiCusNumBody, String cusBalance){
 
         try {
             FileWriter writer = new FileWriter(fileName, true);
@@ -47,8 +47,8 @@ public class ControllerUtilities {
                     "CusID: " + digiCusTfID.toLowerCase() + "\n" +
                             "Lastname: " + digiCusLN + "\n" +
                             "Address: " + digiCusAddress + "\n" +
-                            "PhoneNumber: " + digiCusNumPrefix + "-" + digiCusNumBody +
-                    "\nNumber of customers: " + numberCus + "\n\n\n");
+                            "PhoneNumber: " + digiCusNumPrefix + digiCusNumBody +
+                    "\nBalance: " + cusBalance + "\n\n\n");
             bufferedWriter.close();
             writer.close();
             return true;
@@ -67,12 +67,43 @@ public class ControllerUtilities {
         }
     }
 
+    public int countNumOfCustomer(String filename)throws IOException{
+        this.ensureFileCreation(filename);
+        Scanner scanner = new Scanner(new File(filename));
+        int numberOfCus = 0;
+
+        while(scanner.hasNext()){
+            String line = scanner.nextLine().toLowerCase();
+            if(line.startsWith("cusid: ")){
+               numberOfCus++;
+            }
+        }
+        return numberOfCus;
+    }
 
     public boolean isAddTfEmpty(String cusTfID, String cusLN, String cusAddress, String cusNumPrefix,
                              String cusNumBody) {
 
         return !cusTfID.equals("") && !cusLN.equals("") && !cusAddress.equals("") &&
                 !cusNumPrefix.equals("") && !cusNumBody.equals("");
+    }
+
+    public boolean checkForNumber(String filename, String phoneNumber)throws IOException {
+        this.ensureFileCreation(filename);
+        Scanner scanner = new Scanner(new File(filename));
+        if (scanner.hasNext()) {
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine().toLowerCase();
+                if (line.startsWith("phonenumber: ")) {
+                    if (line.substring(13, 23).equals(phoneNumber)) {
+                        return true;
+                    }
+                }
+            }
+        } else{
+            return true;
+        }
+            return false;
     }
 
 }

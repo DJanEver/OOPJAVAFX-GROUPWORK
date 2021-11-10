@@ -26,5 +26,4 @@ public class DigicelMainSelection {
     public void switchToViewPC(ActionEvent event)throws IOException{
         controllerUtilities.switchScene("resources/digicel/view_digi_credit.fxml", event);
     }
-
 }

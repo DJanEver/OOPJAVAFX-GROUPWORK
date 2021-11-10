@@ -11,5 +11,7 @@ public class HomeController {
     public void switchToServiceProvider(ActionEvent event) throws  IOException{
         controllerUtilities.switchScene("resources/service_provider.fxml", event);
     }
-
+    public void switchToCustomer(ActionEvent event)throws IOException{
+        controllerUtilities.switchScene("resources/customer/select_ser_provider.fxml", event);
+    }
 }

@@ -17,11 +17,15 @@ public class DisplayNumberOfCustomer {
     }
 
     public void showNumOfCus(ActionEvent event)throws IOException{
+
         this.numberOfCus.getItems().add("Digicel: ");
-        this.numberOfCus.getItems().add(String.valueOf(Digicel.getNumberOfCustomer()));
+        this.numberOfCus.getItems().add(String.valueOf(controllerUtilities
+                .countNumOfCustomer("Digicel_Customers.txt")));
         this.numberOfCus.getItems().add("Flow: ");
-        this.numberOfCus.getItems().add(String.valueOf(Flow.getNumberOfCustomer()));
+        this.numberOfCus.getItems().add(String.valueOf(controllerUtilities
+                .countNumOfCustomer("Flow_Customers.txt")));
 
     }
+
 
 }
