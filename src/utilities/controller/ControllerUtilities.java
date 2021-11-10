@@ -88,6 +88,33 @@ public class ControllerUtilities {
                 !cusNumPrefix.equals("") && !cusNumBody.equals("");
     }
 
+    /**
+     *Onieka Id 1800249 checking if credit value is null and writing to credit file.
+     */
+
+    public boolean ifNullValue(String voucher,int value) {
+
+        return !voucher.equals("") && value != 0;
+    }
+
+    public boolean writeCreditToFile(String fileName, String voucher, int value){
+
+        try {
+            FileWriter writer = new FileWriter(fileName, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            bufferedWriter.write(
+                    "VoucherNumber: " + voucher + "\n" +
+                            "VoucherValue: " + value+ "\n \n" );
+            bufferedWriter.close();
+            writer.close();
+            return true;
+        }catch(IOException e){
+            System.out.print(e.getMessage());
+        }
+        return false;
+    }
+
+
     public boolean checkForNumber(String filename, String phoneNumber)throws IOException {
         this.ensureFileCreation(filename);
         Scanner scanner = new Scanner(new File(filename));
@@ -105,5 +132,6 @@ public class ControllerUtilities {
         }
             return false;
     }
+
 
 }

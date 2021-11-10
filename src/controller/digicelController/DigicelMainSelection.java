@@ -12,9 +12,11 @@ public class DigicelMainSelection {
     public void digicelMBackBtn(ActionEvent event) throws IOException {
         controllerUtilities.switchScene("resources/service_provider.fxml",event);
     }
+
     public void callAddCus(ActionEvent event ) throws IOException{
         controllerUtilities.switchScene("resources/digicel/add_digi_customer.fxml", event);
     }
+
     public void digiCompanyInfo(ActionEvent event) throws IOException{
         controllerUtilities.switchScene("resources/digicel/digi_displaycompany_info.fxml", event);
     }
@@ -23,7 +25,12 @@ public class DigicelMainSelection {
         controllerUtilities.switchScene("resources/digicel/digi_view_cus.fxml", event);
     }
 
+    public void digiCredit(ActionEvent event) throws IOException{
+        controllerUtilities.switchScene("resources/digicel/add_digi_credit.fxml", event);
+    }
+
     public void switchToViewPC(ActionEvent event)throws IOException{
         controllerUtilities.switchScene("resources/digicel/view_digi_credit.fxml", event);
     }
+
 }
