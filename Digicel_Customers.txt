@@ -1,7 +1,17 @@
-CusID: 12312311
-Lastname: Watson
-Address: a928j12e
-KingSton 102
-PhoneNumber: 303-1234567
+CusID: 123-1234-1231
+Lastname: JikkmK
+Address: qwe12e
+Kingston 801
+11250
+PhoneNumber: 302-1234567
+Customer balance: 0
+
+
+CusID: 9123-412-1231
+Lastname: Upiam
+Address: u9928 him jia
+Kingston 009
+PhoneNumber: 301-1234556
+Customer balance: 0
 
 

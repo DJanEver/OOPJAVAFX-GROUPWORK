@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
-      <Button fx:id="adminBtnID" layoutX="301.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToServiceProvider" prefHeight="40.0" prefWidth="100.0" text="Administration" />
+      <Button fx:id="adminBtnID" layoutX="282.0" layoutY="321.0" mnemonicParsing="false" onAction="#switchToServiceProvider" prefHeight="40.0" prefWidth="136.0" text="Administration" />
       <Text layoutX="289.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
          <font>
             <Font size="30.0" />
@@ -17,6 +17,7 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <Button layoutX="300.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Customer" />
+      <Button layoutX="283.0" layoutY="383.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="136.0" text="Customer" />
+      <Button layoutX="283.0" layoutY="445.0" mnemonicParsing="false" onAction="#switchDisplayAC" prefHeight="40.0" prefWidth="136.0" text="Display all customers" />
    </children>
 </AnchorPane>

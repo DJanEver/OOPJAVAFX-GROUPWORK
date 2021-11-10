@@ -47,7 +47,8 @@ public class ControllerUtilities {
                     "CusID: " + digiCusTfID.toLowerCase() + "\n" +
                             "Lastname: " + digiCusLN + "\n" +
                             "Address: " + digiCusAddress + "\n" +
-                            "PhoneNumber: " + digiCusNumPrefix + "-" + digiCusNumBody + "\n\n\n");
+                            "PhoneNumber: " + digiCusNumPrefix + "-" + digiCusNumBody +
+                            "\n"+ "Customer balance: "  + "0" + "\n\n\n");
             bufferedWriter.close();
             writer.close();
             return true;

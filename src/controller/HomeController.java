@@ -12,4 +12,7 @@ public class HomeController {
         controllerUtilities.switchScene("resources/service_provider.fxml", event);
     }
 
+    public void switchDisplayAC(ActionEvent event)throws IOException{
+        controllerUtilities.switchScene("resources/show_number_of_customer.fxml", event);
+    }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShowNumberOfCustomer">
+   <children>
+      <ListView fx:id="displayNumberOfCusListV" layoutX="203.0" layoutY="203.0" prefHeight="295.0" prefWidth="295.0" />
+      <Label layoutX="178.0" layoutY="102.0" text="Total number of customer">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="301.0" layoutY="539.0" mnemonicParsing="false" onAction="#showTotalNumber" prefHeight="40.0" prefWidth="100.0" text="Show total" />
+      <Button layoutX="35.0" layoutY="47.0" mnemonicParsing="false" onAction="#switchToHome" text="Back" />
+   </children>
+</AnchorPane>
