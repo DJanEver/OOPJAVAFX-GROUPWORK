@@ -24,4 +24,8 @@ public class FlowMainSelection {
         controllerUtilities.switchScene("resources/flow/flow_view_cus.fxml", event);
     }
 
+    public void switchToViewFlowPC(ActionEvent event)throws IOException{
+        controllerUtilities.switchScene("resources/flow/view_flow_credit.fxml", event);
+    }
+
 }

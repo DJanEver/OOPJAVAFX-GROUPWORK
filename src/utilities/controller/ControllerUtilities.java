@@ -38,7 +38,7 @@ public class ControllerUtilities {
     }
 
     public boolean writeCusToFile(String fileName, String digiCusTfID, String digiCusLN,String digiCusAddress,
-                                  String digiCusNumPrefix, String digiCusNumBody){
+                                  String digiCusNumPrefix, String digiCusNumBody, String numberCus){
 
         try {
             FileWriter writer = new FileWriter(fileName, true);
@@ -47,7 +47,8 @@ public class ControllerUtilities {
                     "CusID: " + digiCusTfID.toLowerCase() + "\n" +
                             "Lastname: " + digiCusLN + "\n" +
                             "Address: " + digiCusAddress + "\n" +
-                            "PhoneNumber: " + digiCusNumPrefix + "-" + digiCusNumBody + "\n\n\n");
+                            "PhoneNumber: " + digiCusNumPrefix + "-" + digiCusNumBody +
+                    "\nNumber of customers: " + numberCus + "\n\n\n");
             bufferedWriter.close();
             writer.close();
             return true;

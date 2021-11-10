@@ -43,7 +43,7 @@ public class AddFlowCustomer {
 
                                 if(controllerUtilities.writeCusToFile(filename,
                                         flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText()
-                                        ,flowCusNumPrefix.getText(), flowCusNumBody.getText())){
+                                        ,flowCusNumPrefix.getText(), flowCusNumBody.getText(), String.valueOf(Flow.getNumberOfCustomer()))){
                                     Flow.setNumberOfCustomer(Flow.getNumberOfCustomer() + 1);
                                     System.out.print("Works file in\n");
                                 }else{
