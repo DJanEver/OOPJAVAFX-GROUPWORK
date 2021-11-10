@@ -26,7 +26,7 @@ public class AddFlowCustomer {
     }
 
     public void addFCusBtn(ActionEvent event) throws IOException{
-        final String filename = " Flow_Customers.txt";
+        final String filename = "Flow_Customers.txt";
         controllerUtilities.ensureFileCreation(filename);
         if (controllerUtilities.isAddTfEmpty(flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText(),
                 flowCusNumPrefix.getText(), flowCusNumBody.getText())) {
@@ -40,14 +40,19 @@ public class AddFlowCustomer {
                                 alert.setContentText("ID already exists please try again");
                                 alert.show();
                             } else {
-
-                                if(controllerUtilities.writeCusToFile(filename,
-                                        flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText()
-                                        ,flowCusNumPrefix.getText(), flowCusNumBody.getText())){
-                                    Flow.setNumberOfCustomer(Flow.getNumberOfCustomer() + 1);
-                                    System.out.print("Works file in\n");
+                                if (!controllerUtilities.checkForNumber(filename, flowCusNumPrefix.getText() +
+                                        flowCusNumBody.getText())) {
+                                    if (controllerUtilities.writeCusToFile(filename,
+                                            flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText()
+                                            , flowCusNumPrefix.getText(), flowCusNumBody.getText(), String.valueOf(flow.getBalance()))) {
+                                        System.out.print("Works file in\n");
+                                    } else {
+                                        System.out.print("Something went wrong\n");
+                                    }
                                 }else{
-                                    System.out.print("Something went wrong\n");
+                                    alert.setAlertType(Alert.AlertType.ERROR);
+                                    alert.setContentText("Phone number already exits or File Empty");
+                                    alert.show();
                                 }
                             }
                         }else{

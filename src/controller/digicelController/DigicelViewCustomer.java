@@ -24,11 +24,16 @@ public class DigicelViewCustomer {
     }
 
     //Viewing the Digicel_Customers.txt File and printing it onto the ListView
-    public void viewCusBtn(ActionEvent event) throws FileNotFoundException {
+    public void viewCusBtn(ActionEvent event) throws IOException {
+        controllerUtilities.ensureFileCreation("Digicel_Customers.txt");
         Scanner scanner = new Scanner(new File("Digicel_Customers.txt"));
-        while(scanner.hasNext()){
-            String line = scanner.nextLine().toLowerCase();
-            this.digicelViewCustomer.getItems().add(line);
+        if(scanner.hasNext()) {
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine().toLowerCase();
+                this.digicelViewCustomer.getItems().add(line);
+            }
+        }else{
+            this.digicelViewCustomer.getItems().add("Please add customer");
         }
 
     }

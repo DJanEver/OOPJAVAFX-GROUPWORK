@@ -24,12 +24,17 @@ public class FlowViewCustomer {
     }
 
     //Viewing the Flow_Customers.txt File and printing it onto the ListView
-    public void flowViewCusBtn(ActionEvent event) throws FileNotFoundException {
-        Scanner scanner = new Scanner(new File(" Flow_Customers.txt"));
-        while(scanner.hasNext()){
-            String line = scanner.nextLine().toLowerCase();
-            this.flowViewCustomer.getItems().add(line);
-        }
+    public void flowViewCusBtn(ActionEvent event) throws IOException {
+        controllerUtilities.ensureFileCreation("Flow_Customers.txt");
+        Scanner scanner = new Scanner(new File("Flow_Customers.txt"));
+       if(scanner.hasNext()) {
+           while (scanner.hasNext()) {
+               String line = scanner.nextLine().toLowerCase();
+               this.flowViewCustomer.getItems().add(line);
+           }
+       }else{
+           this.flowViewCustomer.getItems().add("Please add customer");
 
+       }
     }
 }

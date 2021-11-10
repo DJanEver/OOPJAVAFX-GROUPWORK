@@ -17,5 +17,7 @@
       <Button layoutX="262.0" layoutY="306.0" mnemonicParsing="false" onAction="#flowViewCusBase" prefHeight="40.0" prefWidth="176.0" text="View customer base" />
       <Button layoutX="262.0" layoutY="410.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="176.0" text="View all phone credit" />
       <Button layoutX="262.0" layoutY="357.0" mnemonicParsing="false" onAction="#flowCreateCredit" prefHeight="40.0" prefWidth="176.0" text=" Create phone credit" />
+      <Button layoutX="262.0" layoutY="410.0" mnemonicParsing="false" onAction="#switchToViewFlowPC" prefHeight="40.0" prefWidth="176.0" text="View all phone credit" />
+      <Button layoutX="262.0" layoutY="357.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="176.0" text=" Create phone credit" />
    </children>
 </AnchorPane>

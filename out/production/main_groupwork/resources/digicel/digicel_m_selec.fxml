@@ -15,7 +15,12 @@
       <Button layoutX="262.0" layoutY="206.0" mnemonicParsing="false" onAction="#digiCompanyInfo" prefHeight="40.0" prefWidth="176.0" text="Display company information" />
       <Button layoutX="262.0" layoutY="254.0" mnemonicParsing="false" onAction="#callAddCus" prefHeight="40.0" prefWidth="176.0" text="Add customer" />
       <Button layoutX="262.0" layoutY="306.0" mnemonicParsing="false" onAction="#viewCusBase" prefHeight="40.0" prefWidth="176.0" text="View customer base" />
+<<<<<<< HEAD
       <Button layoutX="262.0" layoutY="410.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="176.0" text="View all phone credit" />
       <Button layoutX="262.0" layoutY="357.0" mnemonicParsing="false" onAction="#digiCredit" prefHeight="40.0" prefWidth="176.0" text=" Create phone credit" />
+=======
+      <Button layoutX="262.0" layoutY="410.0" mnemonicParsing="false" onAction="#switchToViewPC" prefHeight="40.0" prefWidth="176.0" text="View all phone credit" />
+      <Button layoutX="262.0" layoutY="357.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="176.0" text=" Create phone credit" />
+>>>>>>> master
    </children>
 </AnchorPane>
