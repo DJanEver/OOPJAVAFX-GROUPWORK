@@ -35,6 +35,7 @@ public class DigicelViewCustomer {
         }else{
             this.digicelViewCustomer.getItems().add("Please add customer");
         }
+        scanner.close();
 
     }
 }

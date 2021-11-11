@@ -11,7 +11,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="300.0" layoutY="155.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add credit" />
+      <Button layoutX="300.0" layoutY="155.0" mnemonicParsing="false" onAction="#switchToAddFlowCredit" prefHeight="40.0" prefWidth="100.0" text="Add credit" />
       <Button layoutX="300.0" layoutY="216.0" mnemonicParsing="false" onAction="#switchToCheckFlowBalance" prefHeight="40.0" prefWidth="100.0" text="Check balance" />
       <Button layoutX="34.0" layoutY="48.0" mnemonicParsing="false" onAction="#customerFlowMenuBackBtn" text="Back" />
    </children>

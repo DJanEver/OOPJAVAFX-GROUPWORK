@@ -17,8 +17,8 @@ public class FlowViewCredit {
     }
 
     public void viewFlowCreditBtn(ActionEvent event)throws IOException{
-        controllerUtilities.ensureFileCreation("Flow_Customers.txt");
-        Scanner scanner = new Scanner(new File("Flow_Customers.txt"));
+        controllerUtilities.ensureFileCreation("FlowCredit.txt");
+        Scanner scanner = new Scanner(new File("FlowCredit.txt"));
         if(scanner.hasNext()) {
             while (scanner.hasNext()) {
                 String line = scanner.nextLine().toLowerCase();
@@ -27,5 +27,6 @@ public class FlowViewCredit {
         }else{
             this.flowViewCredit.getItems().add("Please add customer");
         }
+        scanner.close();
     }
 }

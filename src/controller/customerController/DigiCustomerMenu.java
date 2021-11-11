@@ -17,6 +17,9 @@ public class DigiCustomerMenu {
         controllerUtilities.switchScene("resources/customer/digi_check_balance.fxml", event);
     }
 
+    public void switchToAddDigiCredit(ActionEvent event)throws IOException {
+        controllerUtilities.switchScene("resources/customer/digi_add_credit.fxml", event);
+    }
 
 
 }

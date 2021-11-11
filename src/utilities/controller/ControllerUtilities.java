@@ -31,9 +31,11 @@ public class ControllerUtilities {
         while(scanner.hasNext()){
             String line = scanner.nextLine().toLowerCase();
             if(line.contains(searchStr)){
+                scanner.close();
                 return true;
             }
         }
+        scanner.close();
         return false;
     }
 
@@ -71,13 +73,13 @@ public class ControllerUtilities {
         this.ensureFileCreation(filename);
         Scanner scanner = new Scanner(new File(filename));
         int numberOfCus = 0;
-
         while(scanner.hasNext()){
             String line = scanner.nextLine().toLowerCase();
             if(line.startsWith("cusid: ")){
                numberOfCus++;
             }
         }
+        scanner.close();
         return numberOfCus;
     }
 
@@ -97,14 +99,15 @@ public class ControllerUtilities {
         return !voucher.equals("") && value != 0;
     }
 
-    public boolean writeCreditToFile(String fileName, String voucher, int value){
+    public boolean writeCreditToFile(String fileName, String voucher, int value, String status){
 
         try {
             FileWriter writer = new FileWriter(fileName, true);
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
             bufferedWriter.write(
                     "VoucherNumber: " + voucher + "\n" +
-                            "VoucherValue: " + value+ "\n \n" );
+                            "VoucherValue: " + value + "\nStatus: " +
+                            status + "\n \n" );
             bufferedWriter.close();
             writer.close();
             return true;
@@ -123,13 +126,16 @@ public class ControllerUtilities {
                 String line = scanner.nextLine().toLowerCase();
                 if (line.startsWith("phonenumber: ")) {
                     if (line.substring(13, 23).equals(phoneNumber)) {
+                        scanner.close();
                         return true;
                     }
                 }
             }
         } else{
-            return true;
+            scanner.close();
+            return false;
         }
+        scanner.close();
             return false;
     }
 

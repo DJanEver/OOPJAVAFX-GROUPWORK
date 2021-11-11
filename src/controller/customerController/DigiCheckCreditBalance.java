@@ -34,28 +34,28 @@ public class DigiCheckCreditBalance {
         }else{
             if(creditTFValue.startsWith("*120*")){
                 //move on
-                if(creditTFValue.startsWith("301", 5) || creditTFValue.startsWith("302", 5)
-                || creditTFValue.startsWith("303", 5) || creditTFValue.startsWith("304", 5)){
+                if(creditTFValue.startsWith("301", 8) || creditTFValue.startsWith("302", 8)
+                || creditTFValue.startsWith("303", 8) || creditTFValue.startsWith("304", 8)){
                     if(creditTFValue.endsWith("#")){
                         //move on
                         if(!searchForDigiNum(creditTFValue.substring(5, 15))){
                             alert.setAlertType(Alert.AlertType.ERROR);
-                            alert.setContentText("phone number does not exist or file empty");
+                            alert.setContentText("phone number does not exist or file empty(Please add customer)");
                             alert.show();
                         }
                     }else{
                         alert.setAlertType(Alert.AlertType.ERROR);
-                        alert.setContentText("must end with # ex: *120*3011234567#");
+                        alert.setContentText("must end with # ex: *120*876301567#");
                         alert.show();
                     }
                 }else{
                     alert.setAlertType(Alert.AlertType.ERROR);
-                    alert.setContentText("phone number must start with 301, 302, 303, 304 ex: *120*3011234567#");
+                    alert.setContentText("phone number must start with 301, 302, 303, 304 ex: *120*876301567#");
                     alert.show();
                 }
             }else{
                 alert.setAlertType(Alert.AlertType.ERROR);
-                alert.setContentText("must start with *120* ex: *120*3011234567#");
+                alert.setContentText("must start with *120* ex: *120*876301567#");
                 alert.show();
             }
         }
@@ -70,13 +70,16 @@ public class DigiCheckCreditBalance {
                 if (line.startsWith("phonenumber: ")) {
                     if (line.substring(13, 23).equals(number)) {
                         displayCBalance.getItems().add(scanner.nextLine());
+                        scanner.close();
                         return true;
                     }
                 }
             }
         }else{
+            scanner.close();
             return  false;
         }
+        scanner.close();
         return false;
     }
 

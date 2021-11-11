@@ -17,6 +17,8 @@ public class FlowCustomerMenu {
         controllerUtilities.switchScene("resources/customer/flow_check_balance.fxml", event);
     }
 
-
+    public void switchToAddFlowCredit(ActionEvent event)throws IOException {
+        controllerUtilities.switchScene("resources/customer/flow_add_credit.fxml", event);
+    }
 
 }

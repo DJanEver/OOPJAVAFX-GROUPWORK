@@ -60,13 +60,17 @@ public class AddCustomerDigi {
             if(digiCusTfID.getText().length() > 6) {
                 if(digiCusLN.getText().length() > 3 && digiCusAddress.getText().length() > 3) {
                     if(digiCusNumBody.getText().length() == 7) {
-                        if (digicel.getNumPrefix().contains(digiCusNumPrefix.getText())) {
+                        if (digiCusNumPrefix.getText().equals("876")){
                         if (controllerUtilities.searchCusID(filename, digiCusTfID.getText()
                                 .toLowerCase())) {
                             alert.setAlertType(Alert.AlertType.ERROR);
                             alert.setContentText("ID already exists please try again");
                             alert.show();
                         } else {
+                            if (digiCusNumBody.getText().startsWith("301") ||
+                                    digiCusNumBody.getText().startsWith("302") ||
+                                    digiCusNumBody.getText().startsWith("303") ||
+                                    digiCusNumBody.getText().startsWith("304")) {
                             if (!controllerUtilities.checkForNumber(filename, digiCusNumPrefix.getText() +
                                     digiCusNumBody.getText())) {
                                 if (controllerUtilities.writeCusToFile(filename,
@@ -79,9 +83,14 @@ public class AddCustomerDigi {
                                 } else {
                                     System.out.print("Something went wrong");
                                 }
-                            }else{
+                            } else {
                                 alert.setAlertType(Alert.AlertType.ERROR);
-                                alert.setContentText("Phone number already exits or File Empty");
+                                alert.setContentText("Phone number already exits");
+                                alert.show();
+                            }
+                        }else{
+                                alert.setAlertType(Alert.AlertType.ERROR);
+                                alert.setContentText("phone number must start with 301, 302, 303 or 304: ex 8763011234");
                                 alert.show();
                             }
                         }
@@ -91,8 +100,7 @@ public class AddCustomerDigi {
                              *alerts are displayed when the user enters invalid data.
                              */
                             alert.setAlertType(Alert.AlertType.ERROR);
-                            alert.setContentText("Prefix does not exist please use one of the following: " +
-                                   "\n" + "301, 302, 303, 304");
+                            alert.setContentText("Prefix not valid must be 876");
                             alert.show();
                         }
                     }else{

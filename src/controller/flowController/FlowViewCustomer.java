@@ -36,5 +36,6 @@ public class FlowViewCustomer {
            this.flowViewCustomer.getItems().add("Please add customer");
 
        }
+       scanner.close();
     }
 }
