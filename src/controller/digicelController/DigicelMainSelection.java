@@ -23,4 +23,8 @@ public class DigicelMainSelection {
         controllerUtilities.switchScene("resources/digicel/digi_view_cus.fxml", event);
     }
 
+    public void digiCredit(ActionEvent event) throws IOException{
+        controllerUtilities.switchScene("resources/digicel/add_digi_credit.fxml", event);
+    }
+
 }

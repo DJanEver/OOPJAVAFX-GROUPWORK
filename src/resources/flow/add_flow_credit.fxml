@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.flowController.AddFlowCredit">
+   <children>
+      <Button layoutX="30.0" layoutY="38.0" mnemonicParsing="false" onAction="#flowBackBut" text="Back" />
+      <Label layoutX="166.0" layoutY="135.0" text="Voucher Value">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="fVoucher" layoutX="344.0" layoutY="131.0" />
+      <TextField fx:id="fValue" layoutX="344.0" layoutY="202.0" />
+      <Label fx:id="fvalue" layoutX="166.0" layoutY="204.0" text="Voucher Value">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="318.0" layoutY="291.0" mnemonicParsing="false" onAction="#flowAddCredit" text="Add Credit" />
+      <Label layoutX="273.0" layoutY="37.0" text="Add Flow Credit">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
