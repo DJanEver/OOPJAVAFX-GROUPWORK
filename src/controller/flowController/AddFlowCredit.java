@@ -24,7 +24,7 @@ public class AddFlowCredit {
     }
 
     public void flowAddCredit(ActionEvent event) throws IOException {
-        final String filename = " FlowCredit.txt";
+        final String filename = "FlowCredit.txt";
 
         controllerUtilities.ensureFileCreation(filename);
 
@@ -63,9 +63,12 @@ public class AddFlowCredit {
             }
             else
             {
-                if(controllerUtilities.writeCreditToFile(filename,fVoucher.getText(),Integer.parseInt(fValue.getText()) ))
+                if(controllerUtilities.writeCreditToFile(filename,fVoucher.getText(),Integer.parseInt(fValue.getText())
+                ,  "New"))
                 {
-                    System.out.print("Added credit to file");
+                    alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                    alert.setContentText("Credit added to file");
+                    alert.show();
                 }else{
                     System.out.print("Something went wrong");
                 }

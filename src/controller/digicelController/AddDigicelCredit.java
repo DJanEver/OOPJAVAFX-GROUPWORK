@@ -62,9 +62,12 @@ public class AddDigicelCredit {
             }
             else
             {
-               if(controllerUtilities.writeCreditToFile(filename,dVoucher.getText(),Integer.parseInt(dValue.getText()) ))
+               if(controllerUtilities.writeCreditToFile(filename,dVoucher.getText(),Integer.parseInt(dValue.getText())
+               , "New"))
                     {
-                         System.out.print("Added credit to file");
+                        alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                        alert.setContentText("Credit added to file");
+                        alert.show();
                      }else{
                             System.out.print("Something went wrong");
                         }

@@ -1,0 +1,16 @@
+CusID: 190-131-213
+Lastname: Yelam
+Address: 8uasd street asd
+kingston 18
+PhoneNumber: 8766011234
+Balance: 100
+
+
+
+
+CusID: 190-131-771
+Lastname: Uoeal
+Address: 8uasd street asd
+kingston 22
+PhoneNumber: 8766021234
+Balance: 0

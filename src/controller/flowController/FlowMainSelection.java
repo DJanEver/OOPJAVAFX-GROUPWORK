@@ -34,4 +34,8 @@ public class FlowMainSelection {
         controllerUtilities.switchScene("resources/flow/view_flow_credit.fxml", event);
     }
 
+    public void switchToFlowCreatePC(ActionEvent event)throws IOException{
+        controllerUtilities.switchScene("resources/flow/add_flow_credit.fxml",event);
+    }
+
 }

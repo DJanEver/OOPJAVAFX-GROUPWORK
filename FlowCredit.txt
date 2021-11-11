@@ -1,0 +1,8 @@
+VoucherNumber: 123456789101
+VoucherValue: 200
+Status: New
+ 
+VoucherNumber: 123456789889
+VoucherValue: 100
+Status: Used
+ 

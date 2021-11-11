@@ -32,8 +32,8 @@ public class FlowCheckCreditBalance {
         }else{
             if(creditTFValue.startsWith("*120*")){
                 //move on
-                if(creditTFValue.startsWith("601", 5) || creditTFValue.startsWith("602", 5)
-                || creditTFValue.startsWith("603", 5) || creditTFValue.startsWith("604", 5)){
+                if(creditTFValue.startsWith("601", 8) || creditTFValue.startsWith("602", 8)
+                || creditTFValue.startsWith("603", 8) || creditTFValue.startsWith("604", 8)){
                     if(creditTFValue.endsWith("#")){
                         //move on
                         if(!searchForFlowNum(creditTFValue.substring(5, 15))){
@@ -43,17 +43,17 @@ public class FlowCheckCreditBalance {
                         }
                     }else{
                         alert.setAlertType(Alert.AlertType.ERROR);
-                        alert.setContentText("must end with # ex: *120*6011234567#");
+                        alert.setContentText("must end with # ex: *120*876601567#");
                         alert.show();
                     }
                 }else{
                     alert.setAlertType(Alert.AlertType.ERROR);
-                    alert.setContentText("phone number must start with 601, 602, 603, 604 ex: *120*6011234567#");
+                    alert.setContentText("phone number must start with 601, 602, 603, 604 ex: *120*876601567#");
                     alert.show();
                 }
             }else{
                 alert.setAlertType(Alert.AlertType.ERROR);
-                alert.setContentText("must start with *120* ex: *120*6011234567#");
+                alert.setContentText("must start with *120* ex: *120*876601567#");
                 alert.show();
             }
         }
@@ -68,13 +68,16 @@ public class FlowCheckCreditBalance {
                 if (line.startsWith("phonenumber: ")) {
                     if (line.substring(13, 23).equals(number)) {
                         displayFlowCBalance.getItems().add(scanner.nextLine());
+                        scanner.close();
                         return true;
                     }
                 }
             }
         }else{
+            scanner.close();
             return false;
         }
+        scanner.close();
         return false;
     }
 

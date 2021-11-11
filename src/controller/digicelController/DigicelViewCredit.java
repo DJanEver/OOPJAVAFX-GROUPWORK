@@ -17,8 +17,8 @@ public class DigicelViewCredit {
     }
 
     public void viewCreditBtn(ActionEvent event)throws IOException{
-        controllerUtilities.ensureFileCreation("Digicel_Customers.txt");
-        Scanner scanner = new Scanner(new File("Digicel_Customers.txt"));
+        controllerUtilities.ensureFileCreation("DigicelCredit.txt");
+        Scanner scanner = new Scanner(new File("DigicelCredit.txt"));
         if(scanner.hasNext()) {
             while (scanner.hasNext()) {
                 String line = scanner.nextLine().toLowerCase();
@@ -27,5 +27,6 @@ public class DigicelViewCredit {
         }else{
             this.digicelViewCredit.getItems().add("Please add credit");
         }
+        scanner.close();
     }
 }
