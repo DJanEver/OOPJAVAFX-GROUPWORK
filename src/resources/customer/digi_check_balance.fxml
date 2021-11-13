@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customerController.DigiCheckCreditBalance">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customerController.DigiCheckCreditBalance">
    <children>
       <Button layoutX="30.0" layoutY="36.0" mnemonicParsing="false" onAction="#checkBalanceBackBtn" text="Back" />
       <TextField fx:id="checkCreditTF" layoutX="250.0" layoutY="139.0" prefHeight="33.0" prefWidth="200.0" promptText="*120*8766031234#" />

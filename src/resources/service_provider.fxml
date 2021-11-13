@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServiceProviderController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServiceProviderController">
    <children>
+      <Pane prefHeight="701.0" prefWidth="349.0" style="-fx-background-color: red;">
+         <children>
+            <Button layoutX="100.0" layoutY="180.0" mnemonicParsing="false" onAction="#digicelLoginForm" prefHeight="40.0" prefWidth="173.0" text="Digicel">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="349.0" layoutY="-1.0" prefHeight="704.0" prefWidth="351.0" style="-fx-background-color: rgb(69, 235, 241)rgb(69, 235, 241);">
+         <children>
+            <Button layoutX="100.0" layoutY="180.0" mnemonicParsing="false" onAction="#flowLoginForm" prefHeight="40.0" prefWidth="173.0" text="Flow">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
       <Button fx:id="ServiceProvBackBtnID" layoutX="24.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToHome" text="Back" />
       <Text layoutX="190.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Service Provider">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Button layoutX="263.0" layoutY="225.0" mnemonicParsing="false" onAction="#digicelLoginForm" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: red;" text="Digicel" />
-      <Button layoutX="263.0" layoutY="281.0" mnemonicParsing="false" onAction="#flowLoginForm" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: skyblue;" text="Flow" />
-      <Button layoutX="264.0" layoutY="339.0" mnemonicParsing="false" onAction="#switchToNumberOfCus" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: yellow;" text="Display number of customer" />
+      <Button layoutX="264.0" layoutY="339.0" mnemonicParsing="false" onAction="#switchToNumberOfCus" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: rgb(15, 236, 181)rgb(15, 236, 181)rgb(15, 236, 181)rgb(15, 236, 181);" text="Display number of customer" />
    </children>
 </AnchorPane>
