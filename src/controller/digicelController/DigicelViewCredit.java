@@ -8,6 +8,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * class created by Jhavon Bron
+ */
 public class DigicelViewCredit {
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();
     public ListView<String>digicelViewCredit = new ListView<>();

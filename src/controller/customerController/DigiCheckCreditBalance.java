@@ -12,21 +12,44 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+
+/**
+ *Class created by Hakeem Watson 2000391
+ */
 public class DigiCheckCreditBalance {
 
+    /**
+     *Declaration of variables
+     */
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();
     public TextField checkCreditTF;
     Alert alert = new Alert(Alert.AlertType.NONE);
     public ListView<String>displayCBalance = new ListView<>();
 //
-
+    /**
+     *Back button method
+     */
     public void checkBalanceBackBtn(ActionEvent event) throws IOException {
         controllerUtilities.switchScene("resources/customer/digi_customer_menu.fxml",
                 event);
     }
 
+
+
+    /**
+     *Add check balance method
+     */
     public void checkDigiBalance(ActionEvent event) throws IOException{
+
+        /**
+         * Declaration of variables and files
+         */
         String creditTFValue = checkCreditTF.getText();
+
+        /**
+         * makes sure that the fields are not empty and validate the
+         * input for the right format
+         */
         if(creditTFValue.equals("")){
             alert.setAlertType(Alert.AlertType.ERROR);
             alert.setContentText("Field must not be empty");
@@ -61,6 +84,9 @@ public class DigiCheckCreditBalance {
         }
     }
 
+    /**
+     *check file to make sure the number exists
+     */
     public boolean searchForDigiNum(String number) throws IOException {
         controllerUtilities.ensureFileCreation("Digicel_Customers.txt");
         Scanner scanner = new Scanner(new File("Digicel_Customers.txt"));

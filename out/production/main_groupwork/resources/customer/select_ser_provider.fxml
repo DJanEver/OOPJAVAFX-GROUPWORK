@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customerController.SelectSerProvider">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customerController.SelectSerProvider">
    <children>
-      <Label layoutX="177.0" layoutY="78.0" text="Select Service Provider">
+      <Pane prefHeight="714.0" prefWidth="345.0" style="-fx-background-color: red;">
+         <children>
+            <Button layoutX="125.0" layoutY="157.0" mnemonicParsing="false" onAction="#switchDigiCusMenu" prefHeight="40.0" prefWidth="100.0" text="Digicel" />
+         </children>
+      </Pane>
+      <Pane layoutX="345.0" prefHeight="713.0" prefWidth="355.0" style="-fx-background-color: skyblue;">
+         <children>
+            <Button layoutX="130.0" layoutY="159.0" mnemonicParsing="false" onAction="#switchFlowCusMenu" prefHeight="40.0" prefWidth="100.0" text="Flow" />
+         </children>
+      </Pane>
+      <Label layoutX="206.0" layoutY="77.0" text="Select Service Provider">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
       <Button layoutX="28.0" layoutY="38.0" mnemonicParsing="false" onAction="#selectServicePBackBtn" text="Back" />
-      <Button layoutX="300.0" layoutY="195.0" mnemonicParsing="false" onAction="#switchDigiCusMenu" prefHeight="40.0" prefWidth="100.0" text="Digicel" />
-      <Button layoutX="300.0" layoutY="265.0" mnemonicParsing="false" onAction="#switchFlowCusMenu" prefHeight="40.0" prefWidth="100.0" text="Flow" />
    </children>
 </AnchorPane>

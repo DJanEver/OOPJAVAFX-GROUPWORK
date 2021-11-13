@@ -5,7 +5,9 @@ import models.Digicel;
 import utilities.controller.ControllerUtilities;
 
 import java.io.IOException;
-
+/**
+ * class created by hakeem watson 2000391
+ */
 public class DigiDisplayCompnayInfo {
 
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();
