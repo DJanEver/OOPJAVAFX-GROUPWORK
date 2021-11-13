@@ -26,35 +26,52 @@ public class AddFlowCustomer {
     }
 
     public void addFCusBtn(ActionEvent event) throws IOException{
-        final String filename = " Flow_Customers.txt";
+        final String filename = "Flow_Customers.txt";
         controllerUtilities.ensureFileCreation(filename);
         if (controllerUtilities.isAddTfEmpty(flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText(),
                 flowCusNumPrefix.getText(), flowCusNumBody.getText())) {
             if(flowCusTfID.getText().length() > 6) {
                 if(flowCusLN.getText().length() > 3 && flowCusAddress.getText().length() > 3) {
                     if(flowCusNumBody.getText().length() == 7) {
-                        if (flow.getNumPrefix().contains(flowCusNumPrefix.getText())) {
+                        if (flowCusNumPrefix.getText().equals("876")) {
                             if (controllerUtilities.searchCusID(filename, flowCusTfID.getText()
                                     .toLowerCase())) {
                                 alert.setAlertType(Alert.AlertType.ERROR);
                                 alert.setContentText("ID already exists please try again");
                                 alert.show();
                             } else {
-
-                                if(controllerUtilities.writeCusToFile(filename,
-                                        flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText()
-                                        ,flowCusNumPrefix.getText(), flowCusNumBody.getText())){
-                                    Flow.setNumberOfCustomer(Flow.getNumberOfCustomer() + 1);
-                                    System.out.print("Works file in\n");
+                                if(flowCusNumBody.getText().startsWith("601") ||
+                                        flowCusNumBody.getText().startsWith("602") ||
+                                        flowCusNumBody.getText().startsWith("603") ||
+                                        flowCusNumBody.getText().startsWith("604")) {
+                                    if (!controllerUtilities.checkForNumber(filename, flowCusNumPrefix.getText() +
+                                            flowCusNumBody.getText())) {
+                                        if (controllerUtilities.writeCusToFile(filename,
+                                                flowCusTfID.getText(), flowCusLN.getText(), flowCusAddress.getText()
+                                                , flowCusNumPrefix.getText(), flowCusNumBody.getText(), String.valueOf(flow.getBalance()))) {
+                                            alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                                            alert.setContentText("Customer added");
+                                            alert.show();
+                                        } else {
+                                            System.out.print("Something went wrong\n");
+                                        }
+                                    } else {
+                                        alert.setAlertType(Alert.AlertType.ERROR);
+                                        alert.setContentText("Phone number already exits");
+                                        alert.show();
+                                    }
                                 }else{
-                                    System.out.print("Something went wrong\n");
-                                }
-                            }
+                                    alert.setAlertType(Alert.AlertType.ERROR);
+                                    alert.setContentText("phone number must start with: " +
+                                            "\n" + "601, 602, 603, 604 ex 8766011234");
+                                    alert.show();
+
+                                }                            }
                         }else{
                             alert.setAlertType(Alert.AlertType.ERROR);
-                            alert.setContentText("Prefix does not exist please use one of the following: " +
-                                    "\n" + "601, 602, 603, 604");
+                            alert.setContentText("Prefix not valid must be 876");
                             alert.show();
+
                         }
                     }else{
                         alert.setAlertType(Alert.AlertType.ERROR);

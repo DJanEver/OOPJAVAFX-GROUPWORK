@@ -9,13 +9,16 @@ public abstract class ServiceProvider {
     private static int numberOfCustomer = 0;
     private String password;
     private List<String> numPrefix;
-
-    public ServiceProvider(){}
-    public ServiceProvider(int companyID, String address, int numberOfCustomer, String password){
+    private int balance;
+    public ServiceProvider(){
+        this.balance = 0;
+    }
+    public ServiceProvider(int companyID, String address, int numberOfCustomer, String password, int balance){
         ServiceProvider.companyID = companyID;
         ServiceProvider.address = address;
         ServiceProvider.numberOfCustomer = numberOfCustomer;
         this.password = password;
+        this.balance = balance;
     }
 
 
@@ -35,6 +38,14 @@ public abstract class ServiceProvider {
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
 
     abstract public void addCustomer();
     abstract public void viewCustomerBase();
