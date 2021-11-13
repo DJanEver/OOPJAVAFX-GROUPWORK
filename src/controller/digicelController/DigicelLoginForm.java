@@ -10,7 +10,11 @@ import utilities.controller.ControllerUtilities;
 
 import java.io.IOException;
 
+/**
+ * class created by hakeem watson 2000391
+ */
 public class DigicelLoginForm {
+
 
     public TextField digiTextField;
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();

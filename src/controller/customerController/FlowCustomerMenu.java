@@ -5,10 +5,20 @@ import utilities.controller.ControllerUtilities;
 
 import java.io.IOException;
 
+
+/**
+ *Class created by Hakeem Watson 2000391
+ */
 public class FlowCustomerMenu {
 
+    /**
+     * Declartion of variables
+     */
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();
 
+    /**
+     *Controller method to switch scenes
+     */
      public void customerFlowMenuBackBtn(ActionEvent event)throws IOException {
          controllerUtilities.switchScene("resources/customer/select_ser_provider.fxml", event);
      }

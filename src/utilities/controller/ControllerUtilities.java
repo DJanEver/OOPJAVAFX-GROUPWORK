@@ -11,6 +11,9 @@ import java.io.*;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * class created and edited by everyone
+ */
 public class ControllerUtilities {
 
     private Stage stage;

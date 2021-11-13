@@ -8,17 +8,34 @@ import utilities.controller.ControllerUtilities;
 import java.io.*;
 import java.util.Scanner;
 
+
+/**
+ *Class created by Hakeem Watson 2000391
+ */
 public class DigiAddCredit {
 
+    /**
+     *Declaration of variables
+     */
     public TextField creditTFDigi;
     Alert alert = new Alert(Alert.AlertType.NONE);
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();
 
+    /**
+     *Back button for adding the credit
+     */
     public void addCreditDigiBackBtn(ActionEvent event)throws IOException {
         controllerUtilities.switchScene("resources/customer/digi_customer_menu.fxml", event);
     }
 
+    /**
+     *Add credit to digicel  voucher
+     */
     public void addCreditDigiBtn(ActionEvent event)throws IOException{
+
+        /**
+         * Declaration of variables and files
+         */
         String creditTFValue = creditTFDigi.getText();
         int digiCreditLine = 0;
         int digiCusBalanceLine = 0;
@@ -31,6 +48,10 @@ public class DigiAddCredit {
         controllerUtilities.ensureFileCreation("Digicel_Customers.txt");
         Scanner scannerCus = new Scanner(digiCusFile);
 
+        /**
+         * makes sure that the fields are not empty and validate the
+         * input for the right format
+         */
         if(creditTFValue.equals("")){
             alert.setAlertType(Alert.AlertType.ERROR);
             alert.setContentText("Field must not be empty");
@@ -62,7 +83,9 @@ public class DigiAddCredit {
                                                                 String cusBalance = scannerCus.nextLine().
                                                                         toLowerCase().replaceAll("balance: ",
                                                                         "");
-                                                                //update file
+                                                                /**
+                                                                 * Update digicel file
+                                                                 */
                                                                 updateDigiCusFile(digiCusBalanceLine, digiCreditLine,
                                                                         digiCreditFile,
                                                                         digiCusFile, creditValue,
@@ -107,6 +130,9 @@ public class DigiAddCredit {
         scanner.close();
         scannerCus.close();
 
+        /**
+         * alerts the user if anything goes wrong
+         */
         if(digiCreditFile.delete()){
             System.out.print("old credit file delete");
         }else{
@@ -133,9 +159,11 @@ public class DigiAddCredit {
             System.out.print("cus file broke");
         }
 
-
     }
 
+    /**
+     * update digicel customer file
+     */
     public void updateDigiCusFile(int digiCusLine, int digiCreditLine, File creditFilename, File cusFilename,
                                   String cValue, String cusOldBalance) throws IOException {
 
@@ -144,16 +172,28 @@ public class DigiAddCredit {
         digiCreditLine+=2;
         digiCusLine+=1;
 
+        /**
+         * Creating scanner for credit Customer
+         */
         Scanner scannerCredit = new Scanner(creditFilename);
         Scanner scannerCus = new Scanner(cusFilename);
 
+        /**
+         * Creating writer for credit Customer
+         */
         FileWriter writerCredit = new FileWriter("creditTemp.txt");
         FileWriter writerCus = new FileWriter(("cusTemp.txt"));
 
+        /**
+         * Creating writer for credit Customer
+         */
         BufferedWriter bufferedCreditWriter = new BufferedWriter(writerCredit);
         BufferedWriter bufferedCusWriter = new BufferedWriter(writerCus);
 
-
+        /**
+         * reading each line from the main file to insert into
+         * a temp file
+         */
         while(scannerCredit.hasNext()){
             dummyCreditLine++;
             String line = scannerCredit.nextLine();
@@ -164,10 +204,17 @@ public class DigiAddCredit {
             }
         }
 
+        /**
+         * closing the buffer and writer
+         */
         bufferedCreditWriter.close();
         writerCredit.close();
 
 
+        /**
+         * reading each line from the main file to insert into
+         * a temp file
+         */
         while(scannerCus.hasNext()){
             dummyCusLine++;
             String line = scannerCus.nextLine();
@@ -179,9 +226,16 @@ public class DigiAddCredit {
             }
         }
 
+
+        /**
+         * closing the buffer and writer
+         */
         bufferedCusWriter.close();
         writerCus.close();
 
+        /**
+         * closing the scanner files
+         */
         scannerCredit.close();
         scannerCus.close();
 

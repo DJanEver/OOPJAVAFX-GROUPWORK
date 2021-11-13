@@ -10,19 +10,32 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ *
+ *Class created by Hakeem Watson 2000391
+ */
 public class FlowCheckCreditBalance {
 
+    /**
+     *Declaration of variables
+     */
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();
     public TextField checkFlowCreditTF;
     Alert alert = new Alert(Alert.AlertType.NONE);
     public ListView<String>displayFlowCBalance = new ListView<>();
 //
 
+    /**
+     *Back button
+     */
     public void checkBalanceFlowBackBtn(ActionEvent event) throws IOException {
         controllerUtilities.switchScene("resources/customer/flow_customer_menu.fxml",
                 event);
     }
 
+    /**
+     *checks flow balance
+     */
     public void checkFlowiBalance(ActionEvent event) throws IOException{
         String creditTFValue = checkFlowCreditTF.getText();
         if(creditTFValue.equals("")){
@@ -59,6 +72,9 @@ public class FlowCheckCreditBalance {
         }
     }
 
+    /**
+     *checks if number exist in file
+     */
     public boolean searchForFlowNum(String number) throws IOException {
         controllerUtilities.ensureFileCreation("Flow_Customers.txt");
         Scanner scanner = new Scanner(new File("Flow_Customers.txt"));

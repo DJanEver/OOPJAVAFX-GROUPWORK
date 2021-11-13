@@ -11,17 +11,34 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ *
+ *Class created by Hakeem Watson 2000391
+  */
 public class FlowAddCredit {
 
+    /**
+     *Declaration of variables
+     */
     public TextField creditTFFlow;
     Alert alert = new Alert(Alert.AlertType.NONE);
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();
 
+    /**
+     *Back button Method
+     */
     public void addCreditFlowBackBtn(ActionEvent event)throws IOException {
         controllerUtilities.switchScene("resources/customer/flow_customer_menu.fxml", event);
     }
 
+    /**
+     *Add credit to Flow  voucher
+     */
     public void addCreditFlowBtn(ActionEvent event)throws IOException{
+
+        /**
+         * Declaration of variables and files
+         */
         String creditTFValue = creditTFFlow.getText();
         int flowCreditLine = 0;
         int flowCusBalanceLine = 0;
@@ -34,6 +51,10 @@ public class FlowAddCredit {
         controllerUtilities.ensureFileCreation("Flow_Customers.txt");
         Scanner scannerCus = new Scanner(flowCusFile);
 
+        /**
+         * makes sure that the fields are not empty and validate the
+         * input for the right format
+         */
         if(creditTFValue.equals("")){
             alert.setAlertType(Alert.AlertType.ERROR);
             alert.setContentText("Field must not be empty");
@@ -65,7 +86,9 @@ public class FlowAddCredit {
                                                                 String cusBalance = scannerCus.nextLine().
                                                                         toLowerCase().replaceAll("balance: ",
                                                                         "");
-                                                                //update file
+                                                                /**
+                                                                 * Update Flow file
+                                                                 */
                                                                 updateFlowCusFile(flowCusBalanceLine, flowCreditLine,
                                                                         flowCreditFile,
                                                                         flowCusFile, creditValue,
@@ -92,6 +115,9 @@ public class FlowAddCredit {
                             }
                         }
                     } else {
+                        /**
+                         * alerts the user if anything goes wrong
+                         */
                         alert.setAlertType(Alert.AlertType.ERROR);
                         alert.setContentText("File empty no credit to add");
                         alert.show();
@@ -107,9 +133,15 @@ public class FlowAddCredit {
                     alert.show();
             }
         }
+        /**
+         * closes scanner
+         */
         scanner.close();
         scannerCus.close();
 
+        /**
+         * deletes old files
+         */
         if(flowCreditFile.delete()){
             System.out.print("old credit file delete");
         }else{
@@ -123,7 +155,9 @@ public class FlowAddCredit {
         }
 
 
-
+        /**
+         * rename old files
+         */
         if(flowTempCreditFile.renameTo(flowCreditFile)){
             System.out.print("credit file renamed");
         }else{
@@ -139,6 +173,9 @@ public class FlowAddCredit {
 
     }
 
+    /**
+     * update flow customer file
+     */
     public void updateFlowCusFile(int digiCusLine, int digiCreditLine, File creditFilename, File cusFilename,
                                   String cValue, String cusOldBalance) throws IOException {
 
@@ -147,16 +184,29 @@ public class FlowAddCredit {
         digiCreditLine+=2;
         digiCusLine+=1;
 
+        /**
+         * Creating scanner for credit Customer
+         */
         Scanner scannerCredit = new Scanner(creditFilename);
         Scanner scannerCus = new Scanner(cusFilename);
 
+        /**
+         * Creating writer for credit Customer
+         */
         FileWriter writerCredit = new FileWriter("creditTemp.txt");
         FileWriter writerCus = new FileWriter(("cusTemp.txt"));
 
+        /**
+         * Creating writer for credit Customer
+         */
         BufferedWriter bufferedCreditWriter = new BufferedWriter(writerCredit);
         BufferedWriter bufferedCusWriter = new BufferedWriter(writerCus);
 
 
+        /**
+         * reading each line from the main file to insert into
+         * a temp file
+         */
         while(scannerCredit.hasNext()){
             dummyCreditLine++;
             String line = scannerCredit.nextLine();
@@ -167,10 +217,17 @@ public class FlowAddCredit {
             }
         }
 
+        /**
+         * **
+          closing the buffer and writer
+         */
         bufferedCreditWriter.close();
         writerCredit.close();
 
-
+        /**
+         * reading each line from the main file to insert into
+         * a temp file
+         */
         while(scannerCus.hasNext()){
             dummyCusLine++;
             String line = scannerCus.nextLine();
@@ -182,9 +239,16 @@ public class FlowAddCredit {
             }
         }
 
+
+        /**
+         * closing the buffer and writer
+         */
         bufferedCusWriter.close();
         writerCus.close();
 
+        /**
+         * closing the scanner files
+         */
         scannerCredit.close();
         scannerCus.close();
 
