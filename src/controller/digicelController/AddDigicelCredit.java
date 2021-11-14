@@ -15,13 +15,13 @@ public class AddDigicelCredit {
     public TextField dValue;
     Alert alert = new Alert(Alert.AlertType.NONE);
     public Digicel digicel = new Digicel();
-
+  /** Onieka 1800249 button that wil carry you back to the main selector page */
 
     public void digicelBackBut(ActionEvent event) throws IOException {
         controllerUtilities.switchScene("resources/digicel/digicel_m_selec.fxml",
                 event);
     }
-
+ /** Onieka 1800249 checking the validity of the credit that the user created and writing it to our credit file */
     public void addDigicelCredit(ActionEvent event) throws IOException {
         final String filename = "DigicelCredit.txt";
 

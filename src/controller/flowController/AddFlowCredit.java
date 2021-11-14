@@ -17,11 +17,13 @@ public class AddFlowCredit {
     Alert alert = new Alert(Alert.AlertType.NONE);
     public Flow flow = new Flow();
 
-/** done by onieka*/
+/** button to take user back to the menu selection page */
     public void flowBackBut(ActionEvent event) throws IOException {
         controllerUtilities.switchScene("resources/flow/flow_m_selec.fxml",
                 event);
     }
+
+    /** done by onieka writing credit to file and checking the validity of the credit length and value */
 
     public void flowAddCredit(ActionEvent event) throws IOException {
         final String filename = "FlowCredit.txt";
