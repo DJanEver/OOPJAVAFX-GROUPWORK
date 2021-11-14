@@ -94,7 +94,7 @@ public class ControllerUtilities {
     }
 
     /**
-     *Onieka Id 1800249 checking if credit value is null and writing to credit file.
+     *Onieka Id 1800249 checking if credit amount and length is correct.
      */
 
     public boolean ifNullValue(String voucher,int value) {
