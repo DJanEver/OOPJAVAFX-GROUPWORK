@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * class created by Jhavon Bron
+ * class created by Jhavon Brown 2002416
  */
 public class DigicelViewCredit {
     final public ControllerUtilities controllerUtilities = new ControllerUtilities();
